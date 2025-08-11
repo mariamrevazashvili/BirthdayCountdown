@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>დროის ბომბა 🎉</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<audio id="celebration-audio" src="{{ url_for('static', filename='music/celebration.mp3') }}" preload="auto"></audio>
+
+  <div class="wrap">
+    <h1 id="greeting" class="hidden">გილოცავ, ნატალი! 🎉</h1>
+
+    <div id="countdown">
+      <div class="card"><span id="days">0</span><div class="label">დღე</div></div>
+      <div class="card"><span id="hours">00</span><div class="label">საათი</div></div>
+      <div class="card"><span id="minutes">00</span><div class="label">წთ</div></div>
+      <div class="card"><span id="seconds">00</span><div class="label">წმ</div></div>
+    </div>
+
+      <button id="mic-button" aria-pressed="false" title="დააჭირე ხმა ჩართვად" style="background:none; border:none; cursor:pointer; font-size:24px; color:gray; user-select:none; margin-top:12px;">
+  🎤
+  <span id="mic-cross" style="position:absolute; width:24px; height:2px; background:red; top:14px; left:0; transform: rotate(-45deg);"></span>
+  <span id="mic-cross2" style="position:absolute; width:24px; height:2px; background:red; top:14px; left:0; transform: rotate(45deg);"></span>
+</button>
+    <div id="celebration" class="hidden">
+      <h2>🎂 სიურპრიზიიიი! Happy Birthday, Natali!❤️</h2>
+    </div>
+  </div>
+
+  <script>
+<!--    const TARGET = new Date(-->
+<!--      {{ target_year }},-->
+<!--      {{ target_month_index }},-->
+<!--      {{ target_day }},-->
+<!--      {{ target_hour }},-->
+<!--      {{ target_minute }},-->
+<!--      {{ target_second }}-->
+<!--    );-->
+
+      const now = new Date();
+  const TARGET = new Date(now.getTime() + 15 * 1000); // 15 წამი შემდეგ
+  </script>
+
+  <!-- Confetti ბიბლიოთეკა -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+</body>
+</html>

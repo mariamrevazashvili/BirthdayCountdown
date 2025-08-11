@@ -1,0 +1,59 @@
+:root {
+  --bg: #0f172a;
+  --card: #0b1220;
+  --accent: #ffde59;
+  --muted: #9aa6c1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #071029 0%, #10253a 100%);
+  color: #e6eef8;
+}
+
+.wrap {
+  text-align: center;
+  padding: 28px;
+  width: min(900px, 95vw);
+}
+
+#greeting {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+#countdown {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 18px 0 22px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 18px 22px;
+  border-radius: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+#mic-button {
+  position: relative;
+  display: inline-block;
+}
+#mic-button span {
+  pointer-events: none;
+  position: absolute;
+}
